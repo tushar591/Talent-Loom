@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 dotenv.config();
 
 const QUESTION_PROMPT = `You are an expert technical interviewer.
-Based on the following inputs, generate **exactly 5** high‑quality interview questions:
+Based on the following inputs, generate **exactly 5** high-quality interview questions:
 Job Title: {{jobTitle}}
 Job Description: {{jobDescription}}
 Interview Duration: {{duration}}
@@ -35,7 +35,7 @@ export async function POST(req) {
     });
 
     const completion = await openai.chat.completions.create({
-      model: "google/gemini-2.0-flash-exp:free",
+      model: "google/gemini-2.0-flash-001",
       messages: [{ role: "user", content: FINAL_PROMPT }],
     });
     //console.log(completion.choices[0].message)
